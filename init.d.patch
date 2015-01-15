@@ -108,3 +108,20 @@ diff -uNr apache-activemq-5.3.2/bin/linux-x86-64/activemq apache-activemq-5.3.2p
                  fi
                  touch $LOCKFILE
                  chown $RUN_AS_USER:$RUN_AS_GROUP $LOCKFILE
+@@ -318,6 +323,7 @@
+         # Still want to change users, recurse.  This means that the user will only be
+         #  prompted for a password once.
+         su -m $RUN_AS_USER -c "$REALPATH $1"
++        RETVAL=$?
+ 
+         # Now that we are the original user again, we may need to clean up the lock file.
+         if [ "X$LOCKPROP" != "X" ]
+@@ -333,7 +339,7 @@
+             fi
+         fi
+ 
+-        exit 0
++        exit $RETVAL
+     fi
+ }
+ 
