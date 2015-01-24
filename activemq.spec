@@ -19,7 +19,7 @@ Summary:        ActiveMQ Messaging Broker
 Group:          Networking/Daemons
 License:        ASL 2.0
 URL:            http://activemq.apache.org/
-Source0: %{?snapshot_version:https://repository.apache.org/content/repositories/snapshots/org/apache/activemq/%{pkgname}/%{pkgversion}/%{pkgname}-%{pkgversion}-bin.tar.gz}%{!?snapshot_version:http://www.apache.org/dist/activemq/%{pkgname}/%{pkgversion}/%{pkgname}-%{pkgversion}-bin.tar.gz}
+Source0: %{?snapshot_version:https://repository.apache.org/content/repositories/snapshots/org/apache/activemq/%{pkgname}/%{pkgversion}/%{pkgname}-%{pkgversion}-bin.tar.gz}%{!?snapshot_version:https://archive.apache.org/dist/activemq/%{pkgname}/%{pkgversion}/%{pkgname}-%{pkgversion}-bin.tar.gz}
 Source1:        activemq-conf
 Patch0:         init.d.patch
 Patch1:         wrapper.conf.patch

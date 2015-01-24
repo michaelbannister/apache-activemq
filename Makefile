@@ -6,11 +6,13 @@ SNAPSHOT= $(shell grep '^%global snapshot_version' ${SPECNAME}.spec | cut -f3 -d
 
 ifeq (${SNAPSHOT},)
 	PKGVERSION=${AMQVERSION}
-	TGZREPO=http://www.apache.org/dist/activemq/${PKGNAME}/${PKGVERSION}
+	TGZREPO=https://archive.apache.org/dist/activemq/${PKGNAME}/${PKGVERSION}
 else
 	PKGVERSION=${AMQVERSION}-SNAPSHOT
 	TGZREPO=https://repository.apache.org/content/repositories/snapshots/org/apache/activemq/${PKGNAME}/${PKGVERSION}
 endif
+
+https://archive.apache.org/dist/activemq/apache-activemq/5.3.2/
 
 BUILD=${shell pwd}/build
 PATCHFILES := $(shell ls *.patch)
